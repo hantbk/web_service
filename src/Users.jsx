@@ -8,10 +8,11 @@ function Users() {
   const [offset, setOffset] = useState(0);
   const [perPage] = useState(8);
   const [pageCount, setPageCount] = useState(0);
+  const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
   useEffect(() => {
     axios
-    .get(`http://localhost:9000`)
+    .get(`${apiUrl}`)
       .then((res) => {
         const totalCount = res.data.length; // Tính tổng số lượng người dùng
         setPageCount(Math.ceil(totalCount / perPage)); // Sử dụng Math.ceil để làm tròn lên
@@ -22,7 +23,7 @@ function Users() {
 
   const handleDelete = (id) => {
     axios
-    .delete(`http://localhost:9000/deleteUser/${id}`)
+    .delete(`${apiUrl}/deleteUser/${id}`)
       .then((res) => {
         console.log(res);
         window.location.reload();

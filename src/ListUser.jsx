@@ -5,9 +5,10 @@ import axios from "axios";
 function ListUser() {
     const { id } = useParams();
     const [user, setUser] = useState(null);
+    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
     useEffect(() => {
-        axios.get(`http://localhost:9000/getUser/${id}`)
+        axios.get(`${apiUrl}/getUser/${id}`)
             .then(res => {
                 setUser(res.data);
             })
