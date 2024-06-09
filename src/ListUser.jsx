@@ -34,16 +34,16 @@ function ListUser() {
                         <p className="card-text">School: {user.school}</p>
                     </div>
                     <div className="mb-3">
-                        <p className="card-text">Date of Birth: {user.dob ? user.dob : "N/A"}</p>
+                        <p className="card-text">Date of Birth: {user.dob ? user.dob : "12/01/2003"}</p>
                     </div>
                     <div className="mb-3">
-                        <p className="card-text">Email: {user.email ? user.email : "N/A"}</p>
+                        <p className="card-text">Email: {user.email ? user.email : "captainnemot1k60@gmail.com"}</p>
                     </div>
                     <div className="mb-3">
-                        <p className="card-text">Phone: {user.phone ? user.phone : "N/A"}</p>
+                        <p className="card-text">Phone: {user.phone ? user.phone : "0987654321"}</p>
                     </div>
                     <div className="mb-3">
-                        <p className="card-text">Country: {user.country ? user.country : "N/A"}</p>
+                        <p className="card-text">Country: {user.country ? user.country : "VN"}</p>
                     </div>
                     {/* Button to navigate back to home */}
                     <Link to="/" className="btn btn-primary">Go back to Home</Link>

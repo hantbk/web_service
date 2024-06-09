@@ -13,7 +13,7 @@ function CreateUser() {
     e.preventDefault();
     try {
       const response = await axios.post(`${apiUrl}/createUser`, { name, gender, school });
-      if (response.status === 201) { // Kiểm tra trạng thái trả về
+      if (response.status === 201) { 
         navigate("/");
       } else {
         console.log("Unexpected response status:", response.status);
