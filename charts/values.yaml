@@ -3,10 +3,7 @@ replicaCount: 2
 image:
   repository: nthhaf/hant-web-service
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: latest
 
 service:
-  type: NodePort
-  port: 80
-
-resources: {}
+  nodePort: 30001
