@@ -8,7 +8,6 @@ spec:
   source:
     repoURL: 'https://github.com/hantbk/web_service.git'
     path: 'charts'
-    targetRevision: HEAD
     helm:
       valueFiles:
         - 'https://raw.githubusercontent.com/hantbk/web_config/main/value.yaml'
