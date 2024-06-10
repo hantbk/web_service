@@ -20,5 +20,5 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: REACT_APP_API_URL
+        - name: VITE_REACT_APP_API_URL
           value: "http://api:3000"
