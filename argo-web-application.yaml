@@ -6,8 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:hantbk/web_service.git
-    targetRevision: HEAD
+    repoURL: https://github.com/hantbk/web_service.git
     path: 'charts'
     helm:
       valueFiles:
@@ -16,8 +15,6 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: web
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
