@@ -18,3 +18,13 @@ spec:
     automated:
       prune: true
       selfHeal: true
+      syncOptions:
+        - CreateNamespace=true
+      syncWave:
+        phase: PreSync
+        max: 1
+      syncStrategy:
+        automated:
+          prune: true
+          selfHeal: true
+      syncInterval: 1m 
