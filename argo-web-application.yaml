@@ -18,4 +18,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      autosync: true
+      autoSync: true
