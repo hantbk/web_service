@@ -5,7 +5,8 @@ import axios from "axios";
 function ListUser() {
     const { id } = useParams();
     const [user, setUser] = useState(null);
-    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    const PORT = import.meta.env.PORT;
+    const apiUrl = `http://localhost:${PORT}` || 'http://localhost:3000'
 
     useEffect(() => {
         axios.get(`${apiUrl}/getUser/${id}`)

@@ -8,7 +8,8 @@ function Users() {
   const [offset, setOffset] = useState(0);
   const [perPage] = useState(8);
   const [pageCount, setPageCount] = useState(0);
-  const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+  const PORT = import.meta.env.PORT;
+  const apiUrl = `http://localhost:${PORT}` || 'http://localhost:3000'
 
   useEffect(() => {
     axios

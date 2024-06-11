@@ -10,8 +10,8 @@ function UpdateUser() {
   const [gender, setGender] = useState("");
   const [school, setSchool] = useState("");
   const navigate = useNavigate();
-  const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-
+  const PORT = import.meta.env.PORT;
+  const apiUrl = `http://localhost:${PORT}` || 'http://localhost:3000'
 
   useEffect(() => {
     axios.get(`${apiUrl}/getUser/` + id)
