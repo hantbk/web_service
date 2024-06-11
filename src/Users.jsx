@@ -8,8 +8,7 @@ function Users() {
   const [offset, setOffset] = useState(0);
   const [perPage] = useState(8);
   const [pageCount, setPageCount] = useState(0);
-  const PORT = import.meta.env.PORT;
-  const apiUrl = `http://localhost:${PORT}` || 'http://localhost:3000'
+  const apiUrl = import.meta.env.API_URL || "http://localhost:3000";
 
   useEffect(() => {
     axios
