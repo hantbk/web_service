@@ -11,10 +11,10 @@ function UpdateUser() {
   const [school, setSchool] = useState("");
   const navigate = useNavigate();
 
-  const apiUrl = import.meta.env.API_URL || "http://localhost:3000";
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    axios.get(`${apiUrl}/getUser/` + id)
+    axios.get(`${apiUrl}/api/users/${id}`)
       .then(res => {
         console.log(res);
         setName(res.data.name);
@@ -27,7 +27,7 @@ function UpdateUser() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.put(`${apiUrl}/updateUser/${id}`, { name, gender, school });
+      const result = await axios.put(`${apiUrl}/api/users/${id}`, { name, gender, school });
       console.log(result);
       navigate("/");
     } catch (err) {

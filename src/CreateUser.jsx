@@ -7,12 +7,12 @@ function CreateUser() {
   const [gender, setGender] = useState("");
   const [school, setSchool] = useState("");
   const navigate = useNavigate();
-  const apiUrl = import.meta.env.API_URL || "http://localhost:3000";
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${apiUrl}/createUser`, { name, gender, school });
+      const response = await axios.post(`${apiUrl}/api/users`, { name, gender, school });
       if (response.status === 201) { 
         navigate("/");
       } else {

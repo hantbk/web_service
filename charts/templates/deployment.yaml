@@ -21,8 +21,8 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: API_URL
-          value: "http://api:3000"
+        - name: VITE_API_URL
+          value: "http://192.168.49.2:30002"
       - name: haproxy-sidecar
         image: haproxy:latest
         ports:

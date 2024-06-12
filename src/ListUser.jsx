@@ -5,10 +5,10 @@ import axios from "axios";
 function ListUser() {
     const { id } = useParams();
     const [user, setUser] = useState(null);
-    const apiUrl = import.meta.env.API_URL || "http://localhost:3000";
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
-        axios.get(`${apiUrl}/getUser/${id}`)
+        axios.get(`${apiUrl}/api/users/${id}`)
             .then(res => {
                 setUser(res.data);
             })
