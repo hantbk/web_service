@@ -48,21 +48,21 @@ jobs:
       - name: List files in config repo
         run: ls -la config-repo
 
-      - name: Check if value.yaml exists
-        run: test -f config-repo/value.yaml && echo "value.yaml exists" || echo "value.yaml does not exist"
+      - name: Check if values.yaml exists
+        run: test -f config-repo/values.yaml && echo "values.yaml exists" || echo "values.yaml does not exist"
 
-      - name: Print current value.yaml
-        run: cat config-repo/value.yaml
+      - name: Print current values.yaml
+        run: cat config-repo/values.yaml
 
-      - name: Update Web image in value.yaml
+      - name: Update Web image in values.yaml
         run: |
           cd config-repo
-          sed -i "s|tag:.*|tag: \"${{ github.ref_name }}\"|g" value.yaml
+          sed -i "s|tag:.*|tag: \"${{ github.ref_name }}\"|g" values.yaml
           git config --global user.email "captainnemot1k60@gmail.com"
           git config --global user.name "hantbk"
-          git add value.yaml
+          git add values.yaml
           git commit -m "Update API image to ${{ secrets.DOCKERHUB_USERNAME }}/hant-api-service:${{ github.ref_name }}"
           git push
 
-      - name: Print updated value.yaml
-        run: cat config-repo/value.yaml
+      - name: Print updated values.yaml
+        run: cat config-repo/values.yaml
